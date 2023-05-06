@@ -15,10 +15,10 @@ let second = document.getElementById('second');
 let minute = document.getElementById('minute');
 
 function start() {
-
+    startbtn.style.display='none';
     pressstart.style.display = 'none';
     field.classList.remove('pregame');
-
+    
   stop();
   timerInterval = setInterval(function() {
   timer += 1/60;
@@ -34,8 +34,6 @@ function start() {
 function stop() {
   clearInterval(timerInterval);
 }
-
-console.log(timerInterval);
 
 let classNames = [];
 let objects = [];
@@ -81,6 +79,7 @@ const showElement =()=>{
 startbtn.addEventListener('click', ()=>{
     start();
     showElement();
+    
 });
 
 playagain.addEventListener('click', ()=>{

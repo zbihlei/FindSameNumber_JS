@@ -16,6 +16,7 @@ body{
 }
 
 .field__container{
+    position: relative;
     display: grid;
     grid-template-columns: repeat(4, 100px);
     grid-template-rows: repeat(4, 100px);
@@ -29,6 +30,7 @@ body{
     height: 100%;
     background-color: rgb(132, 201, 187);
 }
+
 
 .field__item{
     border-radius: 30px;
@@ -48,7 +50,7 @@ body{
 .startbtn, .playagain{
    position: absolute;
    text-decoration: none;
-   bottom: 200px;
+   bottom: 40px;
    height: auto;
    font-size: 20px;
    background-color: black;
@@ -62,7 +64,7 @@ body{
 }
 #secundomer{
     position: absolute;
-    top: 70px;
+    top: 20px;
 }
 .pregame{
     background: rgb(27, 75, 65);
@@ -80,5 +82,10 @@ body{
     position: absolute;
 }
 .level {
-    top: 200px;
+    top: 80px;
+}
+.pressstart {
+    font-size: 100px;
+    line-height: 90px;
+    opacity: .4;
 }
