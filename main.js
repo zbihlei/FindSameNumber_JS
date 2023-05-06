@@ -1,10 +1,11 @@
+
 const field = document.querySelector('.field__container');
 const singleField = document.querySelectorAll('.field__item');
 const startbtn = document.querySelector('.startbtn');
 const playagain = document.querySelector('.playagain');
 const pressstart = document.querySelector('.pressstart');
 const youwin = document.querySelector('.youwin');
-
+const gametime = document.querySelector('.gametime');
 
 //timer 
 let timer = 0;
@@ -34,50 +35,48 @@ function stop() {
   clearInterval(timerInterval);
 }
 
+console.log(timerInterval);
 
-let elements = [];
-let elementsCount = new Set();
+let classNames = [];
+let objects = [];
+let counter = 0;
 
 const showElement =()=>{
    
     singleField.forEach.call(singleField,function(el){
        
-        el.addEventListener('click', ()=>{
+        el.addEventListener('click', (e)=>{
 
+            el.classList.toggle('active');
+            objects.push(el);
+            classNames.push(el.className);
+
+            for (let i =0; i<classNames.length; i++){
+              if (classNames[i] === classNames [i-1]){
+                objects[i-1].classList.add('found');
+                e.target.classList.add('found');
+                classNames = classNames.splice();
+                objects = objects.splice();
+                counter +=1;
+              }
+            }
+
+            setTimeout(()=>{
                 el.classList.toggle('active');
-                setTimeout(()=>{
-                    el.classList.remove('active');
-                    elements.push(el.innerText);
-
-                     for (let i =0; i<elements.length; i++){
-                        if (elements[i] === elements[i-1]){
-                            // el.classList.add('found');
-                            // elements[i].classList.add('found');
-                            // elements[i-1].classList.add('found');
-                            // document.getElementById(elements[i]).classList.add('found');
-                            // document.getElementById(elements[i-1]).classList.add('found');
-
-                            // if (el.id !== el.innerText){
-                            //     el.classList.add('found');
-                            // }
-                            // document.getElementById(el.innerText).classList.add('found');
-                           
-                            elements = elements.splice();
-                        }
-                   }
-                },300); 
+              },300);
+              if (counter === 8){
+                stop();
+                field.classList.add('pregame');
+                youwin.style.display = 'block';
+                startbtn.style.display = 'none';
+                playagain.style.display = 'block';
+                gametime.innerText = Math.floor(timer);
+              }
           });
-    });
-}
+         
+        });
 
-// if (/*smth*/){
-//     stop();
-//     field.classList.add('pregame');
-//     youwin.style.display = 'block';
-//     startbtn.style.display = 'none';
-//     playagain.style.display = 'block';
-// }
-
+    }
 
 startbtn.addEventListener('click', ()=>{
     start();
