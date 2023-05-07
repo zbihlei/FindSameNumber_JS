@@ -1,7 +1,5 @@
-# FindSameNumber_JS!
-[screen](https://user-images.githubusercontent.com/36031653/236670417-7ed93faf-1968-4d39-a42e-c44dc08393a4.jpeg)
+![screen](https://user-images.githubusercontent.com/36031653/236670468-e69247fe-4141-44fb-ba50-67b6346b76d0.jpeg)
 
 
-
-https://user-images.githubusercontent.com/36031653/236670432-3b36fa66-a247-43c9-93cb-982dd7831779.mov
+https://user-images.githubusercontent.com/36031653/236670470-cd74ced3-02e9-4d47-9fc9-3c38a69734ba.mov
 
