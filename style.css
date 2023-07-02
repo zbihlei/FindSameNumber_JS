@@ -7,6 +7,7 @@ body{
     height: 100vh;
 }
 .wrapp{
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
